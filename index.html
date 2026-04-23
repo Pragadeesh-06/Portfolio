@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pragadeesh B | Embedded Systems Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23080c14'/%3E%3Ctext x='50' y='60' font-size='50' font-weight='bold' fill='%2300d4ff' text-anchor='middle' font-family='Arial, sans-serif'%3EPB%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-circuit">
+      <svg viewBox="0 0 400 200" class="circuit-svg">
+        <path class="c-path" d="M10,100 H80 L100,80 H150 L170,100 H220 L240,80 H290 L310,100 H390"/>
+        <circle class="c-dot" cx="80" cy="100" r="5"/>
+        <circle class="c-dot" cx="150" cy="100" r="5"/>
+        <circle class="c-dot" cx="220" cy="100" r="5"/>
+        <circle class="c-dot" cx="290" cy="100" r="5"/>
+        <path class="c-path" d="M100,80 V40 H160 V20"/>
+        <path class="c-path" d="M240,80 V40 H300 V20"/>
+        <path class="c-path" d="M170,100 V140 H130 V160"/>
+        <path class="c-path" d="M310,100 V140 H270 V160"/>
+        <rect class="c-chip" x="140" y="5" width="40" height="20" rx="3"/>
+        <rect class="c-chip" x="280" y="5" width="40" height="20" rx="3"/>
+        <rect class="c-chip" x="110" y="155" width="40" height="20" rx="3"/>
+        <rect class="c-chip" x="250" y="155" width="40" height="20" rx="3"/>
+      </svg>
+    </div>
+    <div class="loader-text">
+      <span class="loader-tag">&lt;</span>
+      <span class="loader-name">PRAGADEESH.B</span>
+      <span class="loader-tag">/&gt;</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <div class="loader-status">INITIALIZING SYSTEM...</div>
+  </div>
+
+  <!-- PAGE TRANSITION -->
+  <div id="page-transition"></div>
+
+  <!-- PROJECT DETAIL MODAL -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <!-- Project photo slot -->
+      <div class="modal-photo-wrap" id="modal-photo-wrap">
+        <!-- filled by JS: either <img> or placeholder -->
+      </div>
+      <!-- Inner content -->
+      <div class="modal-inner">
+        <div class="modal-header">
+          <span class="modal-num" id="modal-num"></span>
+          <h2 class="modal-title" id="modal-title"></h2>
+          <span class="modal-category" id="modal-category"></span>
+        </div>
+        <div class="modal-divider"></div>
+        <p class="modal-overview" id="modal-overview"></p>
+        <div class="modal-section">
+          <h4 class="modal-section-title">Key Features</h4>
+          <ul class="modal-features" id="modal-features"></ul>
+        </div>
+        <div class="modal-section">
+          <h4 class="modal-section-title">Tech Stack</h4>
+          <div class="modal-tags" id="modal-tags"></div>
+        </div>
+        <div class="modal-section">
+          <h4 class="modal-section-title">Outcome / Status</h4>
+          <p class="modal-outcome" id="modal-outcome"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE IMAGE MODAL -->
+  <div id="cert-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" id="cert-modal-close" aria-label="Close">&times;</button>
+      <div class="cert-modal-inner">
+        <p class="cert-modal-title" id="cert-modal-title"></p>
+        <p class="cert-modal-sub" id="cert-modal-sub"></p>
+        <div class="cert-img-wrap" id="cert-img-wrap">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket"></span>Welcome<span class="logo-bracket">...</span>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home"       class="nav-btn active" data-page="home">Home</a></li>
+      <li><a href="#about"      class="nav-btn" data-page="about">About</a></li>
+      <li><a href="#skills"     class="nav-btn" data-page="skills">Skills</a></li>
+      <li><a href="#projects"   class="nav-btn" data-page="projects">Projects</a></li>
+      <li><a href="#experience" class="nav-btn" data-page="experience">Experience</a></li>
+      <li><a href="#contact"    class="nav-btn" data-page="contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- HOME -->
+    <section id="home" class="section active">
+      <div class="home-bg-grid"></div>
+      <div class="scan-line"></div>
+      <div class="home-content">
+        <div class="home-photo-wrap">
+          <div class="photo-ring"></div>
+          <div class="photo-ring ring2"></div>
+          <img src="assets/photo.jpg" alt="Pragadeesh B" class="home-photo"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="photo-placeholder">PB</div>
+          <div class="photo-badge">ECE 2026</div>
+        </div>
+        <div class="home-info">
+          <div class="home-tag typing-tag">Electronics &amp; Embedded Systems Engineer</div>
+          <h1 class="home-name">
+            <span class="name-first">PRAGADEESH</span><span class="name-last"> B</span>
+          </h1>
+          <div class="home-domain">
+            <span class="domain-label">DOMAIN :</span>
+            <span class="domain-value">Embedded Systems · PCB Design · IoT · Robotics</span>
+          </div>
+          <p class="home-summary">
+            Final-year ECE student at Mailam Engineering College (Anna University). Skilled in embedded systems
+            design, PCB layout, IoT and Robotics. Trained 40+ school students under the Government of Tamil Nadu
+            Focus Block Development Program. Passionate about turning research concepts into functional, high-impact prototypes.
+          </p>
+          <div class="home-cta">
+            <a href="#contact"  class="btn-primary  nav-btn" data-page="contact">Get In Touch</a>
+            <a href="#projects" class="btn-secondary nav-btn" data-page="projects">View Projects</a>
+          </div>
+          <div class="home-socials">
+            <a href="mailto:pragadeeshb404@gmail.com" class="social-icon" title="Email">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/pragadeesh-b-ece2026" target="_blank" class="social-icon" title="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="tel:+919952360983" class="social-icon" title="Phone">
+              <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-card profile-card">
+          <div class="profile-card-header">
+            <div class="profile-avatar">PB</div>
+            <div class="profile-title-wrap">
+              <h3 class="profile-name">Pragadeesh B</h3>
+              <span class="profile-badge">ECE · 2026</span>
+            </div>
+          </div>
+          <div class="profile-divider"></div>
+          <ul class="profile-details">
+            <li>
+              <span class="pd-icon">🎓</span>
+              <div><span class="pd-label">Degree</span>
+              <span class="pd-value">B.E — Electronics &amp; Communication Engineering</span></div>
+            </li>
+            <li>
+              <span class="pd-icon">🏛</span>
+              <div><span class="pd-label">College</span>
+              <span class="pd-value">Mailam Engineering College, Anna University</span></div>
+            </li>
+            <li>
+              <span class="pd-icon">📊</span>
+              <div><span class="pd-label">CGPA</span>
+              <span class="pd-value">8.01 &nbsp;|&nbsp; Batch 2022 – 2026</span></div>
+            </li>
+            <li>
+              <span class="pd-icon">📍</span>
+              <div><span class="pd-label">Location</span>
+              <span class="pd-value">Villupuram, Tamil Nadu, India</span></div>
+            </li>
+            <li>
+              <span class="pd-icon">⚡</span>
+              <div><span class="pd-label">Specialisation</span>
+              <span class="pd-value">Embedded Systems · PCB Design · IoT · Robotics</span></div>
+            </li>
+            <li>
+              <span class="pd-icon">🟢</span>
+              <div><span class="pd-label">Status</span>
+              <span class="pd-value pd-open">Open to Opportunities</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-text-col">
+          <p class="about-para">
+            I'm a final-year <strong>Electronics &amp; Communication Engineering</strong> student at Mailam Engineering
+            College (Anna University), passionate about building embedded hardware-software systems that solve
+            real-world problems.
+          </p>
+          <p class="about-para">
+            My core expertise lies in <strong>Embedded Systems Design</strong> — working with microcontrollers like Arduino, ESP,
+            Raspberry Pi Pico, interfacing peripherals via UART, I²C and SPI, and designing custom PCBs in EasyEDA
+            with manual routing. I also build end-to-end <strong>IoT systems</strong> with real-time dashboards
+            and automation logic.
+          </p>
+          <p class="about-para">
+            Beyond building, I love <strong>teaching</strong> — I've trained 40+ school students in IoT &amp; Robotics
+            under the Government of Tamil Nadu Focus Block Development Program, designing beginner-friendly curriculum that
+            gets students building real working projects.
+          </p>
+          <div class="about-stats">
+            <div class="stat-box"><span class="stat-num">6+</span><span class="stat-label">Projects</span></div>
+            <div class="stat-box"><span class="stat-num">3</span><span class="stat-label">Internships</span></div>
+            <div class="stat-box"><span class="stat-num">40+</span><span class="stat-label">Students Trained</span></div>
+            <div class="stat-box"><span class="stat-num">8.01</span><span class="stat-label">CGPA</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">My <span class="accent">Skills</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-cat-title"><span class="cat-icon">⚙</span> Embedded Systems</div>
+          <div class="skill-items">
+            <div class="skill-chip">Embedded C</div>
+            <div class="skill-chip">C</div>
+            <div class="skill-chip">Raspberry Pi Pico</div>
+            <div class="skill-chip">Microcontrollers</div>
+            <div class="skill-chip">GPIO</div>
+            <div class="skill-chip">PWM</div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title"><span class="cat-icon">📡</span> Communication Protocols</div>
+          <div class="skill-items">
+            <div class="skill-chip">UART</div>
+            <div class="skill-chip">I²C</div>
+            <div class="skill-chip">SPI</div>
+            <div class="skill-chip">Bluetooth (HC-05)</div>
+            <div class="skill-chip">Wireless Communication</div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title"><span class="cat-icon">🔧</span> PCB Design & Softwares</div>
+          <div class="skill-items">
+            <div class="skill-chip">EasyEDA (Certified)</div>
+            <div class="skill-chip">proteus</div>
+            <div class="skill-chip">KiCad (learning)</div>
+            <div class="skill-chip">PCB Layout</div>
+            <div class="skill-chip">Gerber Export</div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title"><span class="cat-icon">🌐</span> IoT &amp; Robotics</div>
+          <div class="skill-items">
+            <div class="skill-chip">Sensor Interfacing</div>
+            <div class="skill-chip">IoT Dashboard</div>
+            <div class="skill-chip">Automation</div>
+            <div class="skill-chip">Real Time Logic</div>
+            <div class="skill-chip">Motor Control</div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title"><span class="cat-icon">🔬</span> Debugging &amp; Testing</div>
+          <div class="skill-items">
+            <div class="skill-chip">Circuit Analysis</div>
+            <div class="skill-chip">Fault Diagnosis</div>
+            <div class="skill-chip">Power Management</div>
+            <div class="skill-chip">Oscilloscope</div>
+            <div class="skill-chip">Schematic Reader</div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title"><span class="cat-icon">🤝</span> Soft Skills</div>
+          <div class="skill-items">
+            <div class="skill-chip">Training &amp; Teaching</div>
+            <div class="skill-chip">Curriculum Design</div>
+            <div class="skill-chip">Communication</div>
+            <div class="skill-chip">Event Coordination</div>
+            <div class="skill-chip">Team Collaboration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">My <span class="accent">Projects</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-num">P01</div>
+          <div class="project-glow"></div>
+          <h3 class="project-title">Smart Energy Meter with Overload Indication</h3>
+          <p class="project-desc">Microcontroller-based energy monitor with overload/buzzer alert and power theft detection using Embedded C.</p>
+          <div class="project-tags">
+            <span>Embedded C</span><span>Microcontroller</span><span>Energy Monitoring</span><span>Power Theft Detection</span>
+          </div>
+          <div class="project-links">
+            <button class="proj-link view-project-btn" data-project="p1">View Details →</button>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">P02</div>
+          <div class="project-glow"></div>
+          <h3 class="project-title">Line Follower Bot + Bluetooth RC Control</h3>
+          <p class="project-desc">Dual-mode robot with autonomous IR line-following and WiFi, Bluetooth control with seamless mode-switching logic.</p>
+          <div class="project-tags">
+            <span>Embedded C</span><span>IR Sensors</span><span>WiFi, BT</span><span>L298N</span>
+          </div>
+          <div class="project-links">
+            <button class="proj-link view-project-btn" data-project="p2">View Details →</button>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">P03</div>
+          <div class="project-glow"></div>
+          <h3 class="project-title">Smart Guardian Hub</h3>
+          <p class="project-desc">IoT protection system with overload/surge detection and real-time remote dashboard control.</p>
+          <div class="project-tags">
+            <span>IoT</span><span>Remote Dashboard</span><span>Overload Detection</span><span>Automation</span>
+          </div>
+          <div class="project-links">
+            <button class="proj-link view-project-btn" data-project="p3">View Details →</button>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">P04</div>
+          <div class="project-glow"></div>
+          <h3 class="project-title">BT Car Controller — PCB Design</h3>
+          <p class="project-desc">Custom PCB with L298N motor driver and HC-05 Bluetooth module; manual routing in EasyEDA to minimise interference.</p>
+          <div class="project-tags">
+            <span>EasyEDA</span><span>PCB Design</span><span>L298N</span><span>HC-05 BT</span>
+          </div>
+          <div class="project-links">
+            <button class="proj-link view-project-btn" data-project="p4">View Details →</button>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">P05</div>
+          <div class="project-glow"></div>
+          <h3 class="project-title">Smart Tension-Sensor Electrical Safety System</h3>
+          <p class="project-desc">R&amp;D prototype using tension sensors to detect wire stress/breakage and trigger automatic high-voltage power cutoff.</p>
+          <div class="project-tags">
+            <span>R&amp;D</span><span>Tension Sensor</span><span>Safety System</span><span>High-Voltage Control</span>
+          </div>
+          <div class="project-links">
+            <button class="proj-link view-project-btn" data-project="p5">View Details →</button>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">P06</div>
+          <div class="project-glow"></div>
+          <h3 class="project-title">Digital Clock — Traditional PCB Design</h3>
+          <p class="project-desc">Designed a traditional digital clock circuit from scratch using discrete logic ICs on a custom PCB layout.</p>
+          <div class="project-tags">
+            <span>PCB Design</span><span>Logic ICs</span><span>EasyEDA</span><span>Discrete Circuits</span>
+          </div>
+          <div class="project-links">
+            <button class="proj-link view-project-btn" data-project="p6">View Details →</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">My <span class="accent">Experience</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+          <div class="tl-card">
+            <div class="tl-period">2026 – Present</div>
+            <h3 class="tl-role">IoT &amp; Robotics Trainer</h3>
+            <div class="tl-company">Govt. School Focus Block Development Program, Tamil Nadu</div>
+            <p class="tl-desc">Delivered hands-on IoT and Robotics training to 40+ school students. Designed a beginner-friendly curriculum covering sensors, microcontrollers, and robotics. Mentored students to independently build working projects, improving their practical understanding.</p>
+            <div class="tl-tags"><span>IoT</span><span>Robotics</span><span>Curriculum Design</span><span>Mentoring</span></div>
+            <button class="tl-cert-btn" data-cert="e1">📄 View Photo</button>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+          <div class="tl-card">
+            <div class="tl-period">Jun – Jul 2025 · 35 days</div>
+            <h3 class="tl-role">Embedded Systems Intern</h3>
+            <div class="tl-company">Vi Micro Systems Pvt. Ltd., Chennai</div>
+            <p class="tl-desc">Developed embedded projects using Raspberry Pi Pico in an industry setting. Worked on GPIO configuration, PWM signal generation, and serial communication via UART, I²C and SPI protocols.</p>
+            <div class="tl-tags"><span>Raspberry Pi Pico</span><span>GPIO</span><span>PWM</span><span>UART</span><span>I²C</span><span>SPI</span></div>
+            <button class="tl-cert-btn" data-cert="e2">📄 View Certificate</button>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-period">Jan – Mar 2024 · 10 weeks</div>
+            <h3 class="tl-role">Embedded System Developer</h3>
+            <div class="tl-company">AICTE Virtual Internship (National Program)</div>
+            <p class="tl-desc">Completed AICTE's national embedded systems program covering embedded system design fundamentals, GPIO interfacing, PWM control, and serial communication protocols.</p>
+            <div class="tl-tags"><span>AICTE</span><span>Embedded Design</span><span>GPIO</span><span>PWM</span><span>Serial Protocols</span></div>
+            <button class="tl-cert-btn" data-cert="e3">📄 View Certificate</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cert-section">
+        <h3 class="cert-heading">Certifications &amp; Achievements</h3>
+        <div class="cert-grid">
+          <div class="cert-card" data-cert="c1" title="Click to view certificate">
+            <span class="cert-icon">🏅</span><span class="cert-text">PCB Design using EasyEDA — <strong>Certified</strong></span>
+          </div>
+          <div class="cert-card" data-cert="c2" title="Click to view certificate">
+            <span class="cert-icon">🏭</span><span class="cert-text">Industrial Automation Training for PLC — MIT</span>
+          </div>
+          <div class="cert-card" data-cert="c3" title="Click to view certificate">
+            <span class="cert-icon">⚗</span><span class="cert-text">Fundamentals of Semiconductor</span>
+          </div>
+          <div class="cert-card" data-cert="c6" title="Click to view certificate">
+            <span class="cert-icon">🎓</span><span class="cert-text">Value Added Course — Design &amp; Simulation of Electronics &amp; <strong>Embedded System Products</strong></span>
+          </div>
+          <div class="cert-card" data-cert="c7" title="Click to view certificate">
+            <span class="cert-icon">⌨</span><span class="cert-text">Typewriting English — <strong>Senior First Grade</strong></span>
+          </div>
+          <div class="cert-card" data-cert="c4" title="Click to view">
+            <span class="cert-icon">🏆</span><span class="cert-text">National Level Project Expo — Smart Energy Meter with Overload Indication</span>
+          </div>
+          <div class="cert-card" data-cert="c5" title="Click to view">
+            <span class="cert-icon">🎯</span><span class="cert-text">Event Coordinator — Code Debugging, National-Level Technical Symposium</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-col">
+          <p class="contact-intro">I'm open to internships and work, embedded engineering roles, and IoT/Robotics project collaborations. Let's build something together.</p>
+          <div class="contact-cards">
+            <a href="mailto:pragadeeshb404@gmail.com" class="contact-card">
+              <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+              <div class="cc-text"><span class="cc-label">Email</span><span class="cc-value">pragadeeshb404@gmail.com</span></div>
+            </a>
+            <a href="tel:+919952360983" class="contact-card">
+              <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
+              <div class="cc-text"><span class="cc-label">Mobile</span><span class="cc-value">+91 99523 60983</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/pragadeesh-b-ece2026" target="_blank" class="contact-card">
+              <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+              <div class="cc-text"><span class="cc-label">LinkedIn</span><span class="cc-value">pragadeesh-b-ece2026</span></div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form" autocomplete="off">
+          <!-- Honeypot field — hidden from real users, bots fill it automatically -->
+          <input type="text" id="_hp_field" name="_hp_field" tabindex="-1"
+                 aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" />
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="from_name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="from_email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="Internship / Collaboration / Other" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" rows="5" placeholder="Let's talk about..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit">Send Message →</button>
+          <div class="form-msg" id="form-msg"></div>
+        </form>
+      </div>
+      <div class="contact-footer">
+        <span class="logo-bracket">&lt;</span>Made by Pragadeesh B — ECE 2026<span class="logo-bracket">/&gt;</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Security hardening -->
+  <script src="js/security.js"></script>
+  <!-- EmailJS SDK — for contact form email delivery -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/projects-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

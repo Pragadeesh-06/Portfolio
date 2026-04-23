@@ -1,0 +1,80 @@
+/* =============================================
+   ENTRY ANIMATIONS — staggered fade-in
+   ============================================= */
+.section.active .section-header,
+.section.active .home-photo-wrap,
+.section.active .home-info,
+.section.active .about-card,
+.section.active .profile-card,
+.section.active .about-text-col,
+.section.active .skill-category,
+.section.active .project-card,
+.section.active .timeline-item,
+.section.active .contact-info-col,
+.section.active .contact-form {
+  animation: entryFade 0.5s cubic-bezier(0.23,1,0.32,1) both;
+}
+
+/* Delays */
+.section.active .section-header   { animation-delay: 0.04s; }
+.section.active .home-photo-wrap  { animation-delay: 0.08s; }
+.section.active .home-info        { animation-delay: 0.2s;  }
+.section.active .profile-card     { animation-delay: 0.1s;  }
+.section.active .about-text-col   { animation-delay: 0.22s; }
+.section.active .contact-info-col { animation-delay: 0.1s;  }
+.section.active .contact-form     { animation-delay: 0.22s; }
+
+.section.active .skill-category:nth-child(1) { animation-delay: 0.08s; }
+.section.active .skill-category:nth-child(2) { animation-delay: 0.15s; }
+.section.active .skill-category:nth-child(3) { animation-delay: 0.22s; }
+.section.active .skill-category:nth-child(4) { animation-delay: 0.29s; }
+.section.active .skill-category:nth-child(5) { animation-delay: 0.36s; }
+.section.active .skill-category:nth-child(6) { animation-delay: 0.43s; }
+
+.section.active .project-card:nth-child(1) { animation-delay: 0.07s; }
+.section.active .project-card:nth-child(2) { animation-delay: 0.14s; }
+.section.active .project-card:nth-child(3) { animation-delay: 0.21s; }
+.section.active .project-card:nth-child(4) { animation-delay: 0.28s; }
+.section.active .project-card:nth-child(5) { animation-delay: 0.35s; }
+.section.active .project-card:nth-child(6) { animation-delay: 0.42s; }
+
+.section.active .timeline-item:nth-child(1) { animation-delay: 0.09s; }
+.section.active .timeline-item:nth-child(2) { animation-delay: 0.22s; }
+.section.active .timeline-item:nth-child(3) { animation-delay: 0.35s; }
+
+@keyframes entryFade {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   GLITCH on name hover
+   ============================================= */
+.home-name:hover .name-first {
+  animation: glitch 0.4s steps(2) both;
+}
+@keyframes glitch {
+  0%  { text-shadow: 2px 0 #ff0040,-2px 0 #00d4ff; }
+  25% { text-shadow:-3px 0 #ff0040, 3px 0 #00d4ff; }
+  50% { text-shadow: 3px 0 #ff0040,-1px 0 #00d4ff; }
+  75% { text-shadow:-1px 0 #ff0040, 1px 0 #00d4ff; }
+  100%{ text-shadow: none; }
+}
+
+/* =============================================
+   NAV ACTIVE PULSE DOT
+   ============================================= */
+.nav-links a.active::before {
+  content: '';
+  display: inline-block;
+  width: 5px; height: 5px;
+  background: var(--cyan);
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+  animation: pulse 1.5s ease infinite;
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.5); opacity: 0.5; }
+}
