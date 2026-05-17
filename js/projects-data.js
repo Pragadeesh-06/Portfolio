@@ -171,7 +171,7 @@ const CERTS = {
 const EXP_CERTS = {
   e1: {
     title: "IoT & Robotics Trainer",
-    sub: "Govt. School Skill Development Program, Tamil Nadu · 2026 – Present",
+    sub: "Govt. School Focus Block Development Program, Tamil Nadu · 2026 ",
     image: "assets/cert-iot-trainer.jpg"
   },
   e2: {
@@ -186,7 +186,7 @@ const EXP_CERTS = {
   },
   e4: {
     title: "IoT & Robotics Trainer",
-    sub: "Govt. School Skill Development Program, Tamil Nadu · 2026 ",
+    sub: "Govt. School Focus Block Development Program, Tamil Nadu · 2026 ",
     image: "assets/cert-exp.jpg",
   }
 };
