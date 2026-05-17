@@ -183,6 +183,11 @@ const EXP_CERTS = {
     title: "Embedded System Developer",
     sub: "AICTE Virtual Internship (National Program) · Jan – Mar 2024 · 10 weeks",
     image: "assets/cert-aicte.jpg"
+  },
+  e4: {
+    title: "IoT & Robotics Trainer",
+    sub: "Govt. School Skill Development Program, Tamil Nadu · 2026 ",
+    image: "assets/cert-exp.jpg",
   }
 };
 
